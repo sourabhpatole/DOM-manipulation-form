@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="main">
+  <form action="">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="address">address</label><br>
+    <input type="text" id="address" name="address"><br>
+    <label for="pin">pincode</label><br>
+    <input type="text" name="pin" id="pin" pattern="[0-9]{4}" maxlength="6"><br>
+    <label for="Gender">Select Gender</label>
+    <input type="radio" name="Gender">Male
+    <input type="radio" name="Gender">Female <br>
+    <label>
+      First Food :
+    </label>
+    <select>
+      <option value="briyani">briyani</option>
+      <option value="Pulav">Pulav</option>
+      <option value="panipuri">panipuri</option>
+      <option value="Gulabjamun">Gulabjamun</option>
+      <option value="paneer">paneer</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Burger">Burger</option>
+    </select>
+    <label>
+      Second Food :
+    </label>
+    <select>
+      <option value="briyani">briyani</option>
+      <option value="Pulav">Pulav</option>
+      <option value="panipuri">panipuri</option>
+      <option value="Gulabjamun">Gulabjamun</option>
+      <option value="paneer">paneer</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Burger">Burger</option>
+    </select><br>
+    <label for="state">State</label><br>
+    <input type="text" name="state" id="state"><br>
+    <label for="country">country</label><br>
+    <input type="text" name="country" id="country"><br>
+    <div>
+      <input type="submit" value="Submit Form" />
+    </div>
+
+  </form>
+  <table>
+    <thead>
+      <tr id="fname">FirstName</tr>
+      <tr>LastName</tr>
+      <tr>Address</tr>
+      <tr>Pincode</tr>
+      <Tr>Gender</Tr>
+      <tr>Fav Food</tr>
+      <tr>State</tr>
+      <tr>country</tr>
+    </thead>
+  </table>
+
+
+  <div class="container">
+    <h1 style="text-align : center;">Preparing Subject List </h1>
+    <form>
+      <div class="form-group">
+        <label for="">Enter Subjects:</label>
+        <input id="subjectname" class="form-control" type="text" placeholder="Input Your Name Here">
+      </div>
+      <div class="form-group text-center">
+        <button id="my_button" class="btn btn-outline-success btn-lg" type="button">
+          Add Subjects
+        </button>
+      </div>
+    </form>
+    <h3>List of Subjects as:</h3>
+    <div id="listDemo"></div>
+  </div>
+  <script>
+    function append_to_div(div_name, data) {
+      document.getElementById(div_name).innerText += data;
+    }
+    document.getElementById("my_button")
+      .addEventListener('click', function () {
+        var user_name = document.getElementById("subjectname");
+        var value = user_name.value.trim();
+        if (!value)
+          alert("Please enter subject name!");
+        else
+          append_to_div("listDemo", value + "\n");
+        user_name.value = "";
+      });
+  </script>
+</body>
+
+
+</html>

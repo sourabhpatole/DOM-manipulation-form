@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> JavaScript Append </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align : center;">Preparing Subject List </h1>
+    <form>
+      <div class="form-group">
+        <label for="">Enter Subjects:</label>
+        <input id="subjectname" class="form-control" type="text" placeholder="Input Your Name Here">
+      </div>
+      <div class="form-group text-center">
+        <button id="my_button" class="btn btn-outline-success btn-lg" type="button">
+          Add Subjects
+        </button>
+      </div>
+    </form>
+    <h3>List of Subjects as:</h3>
+    <div id="listDemo"></div>
+  </div>
+  <script>
+    function append_to_div(div_name, data) {
+      document.getElementById(div_name).innerText += data;
+    }
+    document.getElementById("my_button")
+      .addEventListener('click', function () {
+        var user_name = document.getElementById("subjectname");
+        var value = user_name.value.trim();
+        if (!value)
+          alert("Please enter subject name!");
+        else
+          append_to_div("listDemo", value + "\n");
+        user_name.value = "";
+      });
+  </script>
+</body>
+
+</html>
